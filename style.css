@@ -1,104 +1,27 @@
 /* =========================================================
-   ESTILOS GERAIS
+   BASE — NORMALIZAÇÃO E TIPOGRAFIA
+   Mantém a renderização consistente entre navegadores e telas.
    ========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e9ecef;
-    color: #0b0a0a;
+    margin: 0;
+    font-family: "Lato", sans-serif;
     line-height: 1.6;
 }
 
-header {
-    background-color: #8e9292b6;
-    padding: 10px;
-}
-
-.nav-buttons {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.nav-buttons a {
-    text-decoration: none;
-    padding: 10px 15px;
-    background-color: #0d81f6;
-    color: white;
-    border-radius: 5px;
-    transition: background-color 0.2s;
-}
-
-.nav-buttons a:hover {
-    background-color: #04f93d;
-}
-
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: justify;
-}
-
-.main-image {
+img {
     max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-
-.about-section {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.about-content {
-    flex: 1;
-    padding-right: 20px;
-}
-
-.about-content h1 {
-    color: #007bff;
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.about-content p {
-    margin-bottom: 15px;
-}
-
-.about-image {
-    max-width: 300px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.about-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
 
 /* =========================================================
    HOME — MÁRCIA CARVALHO
@@ -139,20 +62,46 @@ footer {
     color: #365963;
 }
 
-.home-page .brand-name {
-    font-size: 1.35rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
+.header-name {
+    position: absolute;
+
+    left: 50%;
+    top: 55%;
+
+    transform: translate(-50%, -50%);
+
+    margin-left: -100px;
+
+    color: #304f58;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.5rem;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.home-page .brand-subtitle {
-    margin-top: 3px;
+.header-name small {
+    margin-top: 6px;
+
+    font-family: "Lato", sans-serif;
+
     font-size: 0.72rem;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: #70878d;
-}
 
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    color: #6f858b;
+}   
 
 /* ---------- MENU ---------- */
 
@@ -195,6 +144,8 @@ footer {
     box-shadow: none;
 
     text-align: left;
+
+    padding-bottom: 80px;
 }
 
 
@@ -203,17 +154,17 @@ footer {
 .home-page .hero {
     max-width: 1180px;
 
-    min-height: 560px;
+    min-height: 620px;
 
     margin: 0 auto;
-    padding: 55px 30px;
+    padding: 50px 30px;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 480px;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 540px);
 
     align-items: center;
 
-    gap: 10px;
+    gap: clamp(30px, 4vw, 50px);
 }
 
 .home-page .hero-content {
@@ -270,14 +221,12 @@ footer {
 
 .home-page .hero-description {
     max-width: 600px;
-
-    margin: 0;
-
+    margin: 0 0 5px;
     color: #708287;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: justify;
 
-    font-size: 1rem;
-
-    line-height: 1.8;
 }
 
 
@@ -334,86 +283,15 @@ footer {
 
 /* ---------- FOTO DA HOME ---------- */
 
-.home-page .hero-image {
-    display: flex;
-    justify-content: center;
-
-    width: 100%;
-    height: 430px;
-
-    overflow: hidden;
-}
-
-.home-page .hero-image img {
-    display: block;
-
-    width: 100%;
-    height: 430px;
-
-    object-fit: cover;
-    object-position: center center;
-
-    border-radius: 0;
-
-    box-shadow: 0 18px 45px rgba(48, 79, 88, 0.12);
-
-    /* Transição suave para o fundo */
-    -webkit-mask-image: linear-gradient(to right,
-            black 0%,
-            black 68%,
-            rgba(0, 0, 0, 0.75) 78%,
-            rgba(0, 0, 0, 0.25) 90%,
-            transparent 100%);
-
-    mask-image: linear-gradient(to right,
-            black 0%,
-            black 68%,
-            rgba(0, 0, 0, 0.75) 78%,
-            rgba(0, 0, 0, 0.25) 90%,
-            transparent 100%);
-}
-
-/* =========================================================
-   FOTO DO INÍCIO — FORMATO RETANGULAR
-   ========================================================= */
-
-.home-page .hero {
-    grid-template-columns: minmax(0, 1fr) 380px;
-    gap: 50px;
-}
-
-.home-page .hero-image {
-    display: flex;
-    justify-content: center;
-}
-
-.home-page .hero-image img {
-    display: block;
-
-    width: 500px;
-    height: 445px;
-
-    max-width: none;
-
-    object-fit: cover;
-    object-position: center 55%;
-
-    border-radius: 0;
-
-    transform: translateY(-30px);
-
-    box-shadow: 0 18px 45px rgba(48, 79, 88, 0.12);
-}
-
-
+.home-page .home-page
 /* ---------- SERVIÇOS NA HOME ---------- */
 
 .home-page .services-preview {
     max-width: 1180px;
 
-    margin: 0 auto;
+    margin: 0 auto 60px;
 
-    padding: 70px 30px 80px;
+    padding: 70px 30px 40px;
 
     border-top: 1px solid #e1e9eb;
 }
@@ -436,14 +314,6 @@ footer {
     font-weight: 400;
 }
 
-.home-page .section-heading>p:last-child {
-    margin: 0;
-
-    color: #75868a;
-
-    font-size: 1rem;
-}
-
 
 /* ---------- CARDS ---------- */
 
@@ -453,6 +323,9 @@ footer {
     grid-template-columns: repeat(2, 1fr);
 
     gap: 24px;
+
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .home-page .service-card {
@@ -478,20 +351,9 @@ footer {
     transform: translateY(-3px);
 
     border-color: #c2d2d6;
+    background: #eef4f5;
 
     box-shadow: 0 14px 30px rgba(48, 79, 88, 0.09);
-}
-
-.home-page .service-icon {
-    margin-bottom: 20px;
-
-    color: #78949b;
-
-    font-size: 0.78rem;
-
-    font-weight: 600;
-
-    letter-spacing: 1.5px;
 }
 
 .home-page .service-card h3 {
@@ -530,10 +392,12 @@ footer {
    ========================================================= */
 
 .inner-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
     background-color: #f7f9f9;
-
     color: #33474d;
-
     font-family: "Lato", sans-serif;
 }
 
@@ -576,24 +440,6 @@ footer {
     text-decoration: none;
 
     color: #365963;
-}
-
-.inner-page .brand-name {
-    font-size: 1.35rem;
-
-    font-weight: 600;
-}
-
-.inner-page .brand-subtitle {
-    margin-top: 3px;
-
-    font-size: 0.72rem;
-
-    letter-spacing: 1.2px;
-
-    text-transform: uppercase;
-
-    color: #70878d;
 }
 
 .inner-page .site-nav {
@@ -652,11 +498,19 @@ footer {
 .about-hero {
     display: grid;
 
-    grid-template-columns: 340px 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 540px);
 
     align-items: center;
 
-    gap: 60px;
+    gap: clamp(30px, 4vw, 50px);
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+}
+
+.about-content {
+    text-align: left;
 }
 
 
@@ -666,7 +520,7 @@ footer {
     display: flex;
 
     justify-content: flex-start;
-    transform: translateX(-40px);
+    transform: none;
 }
 
 .about-image img {
@@ -675,13 +529,13 @@ footer {
     height: 450px;
 
     object-fit: cover;
-    object-position: center 55%;
+    object-position: center top;
 
     border-radius: 0;
 
     box-shadow: 0 18px 45px rgba(48, 79, 88, 0.12);
 
--webkit-mask-image: linear-gradient(to right,
+    -webkit-mask-image: linear-gradient(to right,
             black 0%,
             black 78%,
             rgba(0, 0, 0, 0.75) 85%,
@@ -700,6 +554,8 @@ footer {
 
 .about-content {
     max-width: 650px;
+    text-align: left;
+    order: 1;
 }
 
 .about-content .eyebrow {
@@ -743,9 +599,10 @@ footer {
 
     color: #687b80;
 
-    font-size: 0.96rem;
+    font-size: 1.04rem;
 
     line-height: 1.65;
+    text-align: justify;
 }
 
 
@@ -844,252 +701,7 @@ footer {
 }
 
 
-/* =========================================================
-   RESPONSIVIDADE
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    /* ---------- HOME ---------- */
-
-    .home-page .site-header-content {
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-    .home-page .hero {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-        padding: 50px 30px;
-    }
-
-    .home-page .hero-content {
-        max-width: 100%;
-
-        text-align: center;
-    }
-
-    .home-page .hero .eyebrow,
-    .home-page .hero-text,
-    .home-page .hero-description {
-        margin-left: auto;
-
-        margin-right: auto;
-    }
-
-    .home-page .hero-buttons {
-        justify-content: center;
-    }
-
-    .home-page .hero-image {
-        order: -1;
-    }
-
-    .home-page .hero-image img {
-        width: min(100%, 320px);
-
-        height: 390px;
-    }
-
-    .home-page .service-cards {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* ---------- PÁGINAS INTERNAS ---------- */
-
-    .inner-page .site-header-content {
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-    .about-main {
-        padding: 45px 30px 60px;
-    }
-
-    .about-hero {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-    .about-image {
-        order: -1;
-    }
-
-    .about-image img {
-        width: min(100%, 300px);
-
-        height: 380px;
-    }
-
-    .about-content {
-        max-width: 100%;
-
-        text-align: center;
-    }
-
-    .about-content h1 {
-        font-size: 3rem;
-    }
-
-    .about-content .eyebrow,
-    .about-content p {
-        margin-left: auto;
-
-        margin-right: auto;
-    }
-
-    .about-approach .section-heading {
-        text-align: center;
-
-        margin: 0 auto;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    /* ---------- HOME ---------- */
-
-    .home-page .site-header-content {
-        padding: 16px 20px;
-    }
-
-    .home-page .site-nav {
-        width: 100%;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-    }
-
-    .home-page .site-nav a {
-        padding: 8px 10px;
-
-        font-size: 0.88rem;
-    }
-
-    .home-page .hero {
-        padding: 40px 20px 50px;
-    }
-
-    .home-page .hero h1 {
-        font-size: 3rem;
-    }
-
-    .home-page .hero-text {
-        font-size: 1.2rem;
-    }
-
-    .home-page .hero-buttons {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-    .home-page .button {
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .home-page .hero-image img {
-        width: 280px;
-
-        height: 350px;
-    }
-
-    .home-page .services-preview {
-        padding: 55px 20px 65px;
-    }
-
-    .home-page .section-heading h2 {
-        font-size: 2rem;
-    }
-
-    .home-page .service-card {
-        padding: 26px;
-    }
-
-
-    /* ---------- PÁGINAS INTERNAS ---------- */
-
-    .inner-page .site-header-content {
-        padding: 16px 20px;
-    }
-
-    .inner-page .site-nav {
-        width: 100%;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-    }
-
-    .inner-page .site-nav a {
-        padding: 8px 10px;
-
-        font-size: 0.88rem;
-    }
-
-    .about-main {
-        padding: 40px 20px 55px;
-    }
-
-    .about-image img {
-        width: 280px;
-
-        height: 350px;
-    }
-
-    .about-content h1 {
-        font-size: 2.6rem;
-    }
-
-    .about-content p:not(.eyebrow):not(.about-role) {
-        font-size: 0.95rem;
-    }
-
-    .about-approach {
-        margin-top: 50px;
-
-        padding-top: 45px;
-    }
-
-    .about-approach h2 {
-        font-size: 2rem;
-    }
-}
-
-.header-content {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 6px 30px;
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-}
-
-.site-logo {
-    height: 55px;
-    width: auto;
-    object-fit: contain;
-}
-
 /* Logo da marca no cabeçalho */
-.site-header {
-    background-color: #b3cbd2;
-}
-
 .site-header-content {
     min-height: 100px;
 }
@@ -1141,7 +753,7 @@ footer {
     color: #304f58;
 
     font-family: "Cormorant Garamond", serif;
-    font-size: 3.5rem;
+    font-size: clamp(2.8rem, 4vw, 3.5rem);
     font-weight: 400;
     line-height: 1.05;
 }
@@ -1226,7 +838,7 @@ footer {
 
     color: #718287;
 
-    font-size: 0.96rem;
+    font-size: 1.0rem;
     line-height: 1.55;
 }
 
@@ -1257,52 +869,10 @@ footer {
 
 /* ---------- RODAPÉ ---------- */
 
-.inner-page {
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-}
-
 .inner-page .site-footer {
     margin-top: auto;
 }
 
-
-/* =========================================================
-   SERVIÇOS — RESPONSIVIDADE
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    .inner-page .inner-main {
-        padding: 35px 30px 45px;
-    }
-
-    .inner-page .services-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .inner-page .inner-main {
-        padding: 30px 20px 40px;
-    }
-
-    .inner-page .page-heading h1 {
-        font-size: 3rem;
-    }
-
-    .inner-page .service-detail-card {
-        padding: 24px;
-    }
-
-    .inner-page .service-detail-content h2 {
-        font-size: 1.55rem;
-    }
-}
 
 /* =========================================================
    CONTATO
@@ -1349,7 +919,7 @@ footer {
     color: #304f58;
 
     font-family: "Cormorant Garamond", serif;
-    font-size: 3.5rem;
+    font-size: clamp(2.8rem, 4vw, 3.5rem);
     font-weight: 400;
 
     line-height: 1.05;
@@ -1370,10 +940,10 @@ footer {
 
 .inner-page .contact-cards {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .inner-page .contact-card {
@@ -1459,114 +1029,6 @@ footer {
 
 
 /* =========================================================
-   CONTATO — RESPONSIVIDADE
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    .inner-page .contact-main {
-        padding: 35px 30px 45px;
-    }
-
-    .inner-page .contact-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .inner-page .contact-main {
-        padding: 30px 20px 40px;
-    }
-
-    .inner-page .contact-heading h1 {
-        font-size: 2.6rem;
-    }
-
-    .inner-page .contact-card {
-        padding: 24px;
-    }
-}
-
-/* ========================================
-   PÁGINA PSICOTERAPIA
-======================================== */
-
-.inner-page .psychotherapy-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 0 60px;
-}
-
-.inner-page .psychotherapy-card {
-    background-color: #ffffff;
-    border: 1px solid #d6e2e6;
-    border-radius: 16px;
-    padding: 48px;
-    box-shadow: 0 8px 30px rgba(48, 77, 87, 0.04);
-}
-
-.inner-page .psychotherapy-number {
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #718a94;
-    margin-bottom: 20px;
-}
-
-.inner-page .psychotherapy-card h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 36px;
-    font-weight: 500;
-    color: #304d57;
-    margin-bottom: 24px;
-}
-
-.inner-page .psychotherapy-card p {
-    font-size: 17px;
-    line-height: 1.9;
-    color: #627680;
-    margin-bottom: 18px;
-    max-width: 850px;
-}
-
-.inner-page .psychotherapy-actions {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 36px;
-}
-
-/* Responsividade */
-
-@media (max-width: 768px) {
-    .inner-page .psychotherapy-content {
-        padding-bottom: 40px;
-    }
-
-    .inner-page .psychotherapy-card {
-        padding: 28px 24px;
-    }
-
-    .inner-page .psychotherapy-card h2 {
-        font-size: 29px;
-    }
-
-    .inner-page .psychotherapy-card p {
-        font-size: 16px;
-    }
-
-    .inner-page .psychotherapy-actions {
-        flex-direction: column;
-    }
-
-    .inner-page .psychotherapy-actions .button {
-        text-align: center;
-    }
-}
-
-/* =========================================================
    PSICOTERAPIA — AJUSTE EXCLUSIVO DA PÁGINA
    ========================================================= */
 
@@ -1579,31 +1041,20 @@ footer {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+    transform: translateX(-20px);
 }
 
 .psychotherapy-card {
     width: 100%;
 
-    padding: 34px 48px 30px;
+    padding: 10px 8px 20px;
 
-    background-color: #ffffff;
+    background-color: transparent;
 
-    border: 1px solid #d9e5e9;
-    border-radius: 14px;
+    border: none;
+    border-radius: 0;
 
-    box-shadow: 0 8px 30px rgba(40, 75, 85, 0.04);
-}
-
-.psychotherapy-card .eyebrow {
-    margin: 0 0 14px;
-
-    color: #66838b;
-
-    font-size: 0.78rem;
-    font-weight: 600;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    box-shadow: none;
 }
 
 .psychotherapy-card h2 {
@@ -1684,31 +1135,58 @@ footer {
 
 /* ---------- RODAPÉ ---------- */
 
-.psychotherapy-main+.site-footer {
-    margin-top: auto;
-}
-
-
 /* =========================================================
    PSICOTERAPIA — CELULAR
    ========================================================= */
+
+/* ---------- IMAGEM PRINCIPAL ---------- */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 522px;
+
+    overflow: hidden;
+}
+
+.hero-image img {
+    display: block;
+
+    width: min(100%, 450px);
+    height: 522px;
+
+    object-fit: cover;
+    object-position: center center;
+
+    border-radius: 0;
+
+    box-shadow: 0 18px 45px rgba(48, 79, 88, 0.12);
+
+    transform: none;
+
+    /* Transição suave para o fundo */
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.25) 10%,
+            rgba(0, 0, 0, 0.75) 25%,
+            black 32%,
+            black 100%);
+
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.25) 10%,
+            rgba(0, 0, 0, 0.75) 25%,
+            black 32%,
+            black 100%);
+}
+
 
 @media (max-width: 600px) {
 
     .psychotherapy-main {
         padding: 30px 20px 35px;
-    }
-
-    .psychotherapy-card {
-        padding: 28px 24px;
-    }
-
-    .psychotherapy-card h2 {
-        font-size: 2rem;
-    }
-
-    .psychotherapy-card p:not(.eyebrow) {
-        font-size: 0.95rem;
     }
 
     .psychotherapy-actions {
@@ -1782,7 +1260,7 @@ footer {
 
     color: #687b80;
 
-    font-size: 0.96rem;
+    font-size: 1.05rem;
 
     line-height: 1.65;
 }
@@ -1840,11 +1318,6 @@ footer {
     background-color: #edf4f5;
 }
 
-.neuropsychology-main+.site-footer {
-    margin-top: auto;
-}
-
-
 /* =========================================================
    AVALIAÇÃO NEUROPSICOLÓGICA — CELULAR
    ========================================================= */
@@ -1881,29 +1354,988 @@ footer {
 }
 
 /* =========================================================
-   TESTE DE TIPOGRAFIA — HOME
+   RESPONSIVIDADE — HOME E PÁGINAS INTERNAS
+   O layout se adapta aos CSS pixels disponíveis, não ao tamanho físico
+   do monitor. Isso mantém o mesmo design em MacBook, monitor externo
+   e celular, mudando apenas quando o espaço realmente fica menor.
    ========================================================= */
 
-.home-page {
-    font-family: "Lato", sans-serif;
+@media (max-width: 1050px) {
+
+    /* ---------- HOME ---------- */
+
+    .home-page .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
+        gap: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .home-page .hero-image {
+        height: 500px;
+    }
+
+    .home-page .hero-image img {
+        width: min(100%, 430px);
+        height: 500px;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    /* ---------- SOBRE MIM ---------- */
+
+    .about-main {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .about-hero {
+        grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    /* ---------- SERVIÇOS ---------- */
+
+    .inner-page .services-grid {
+        gap: 20px;
+    }
+
+    /* ---------- CONTATO ---------- */
+
+    .inner-page .contact-cards {
+        gap: 18px;
+    }
 }
 
-.home-page h1,
-.home-page h2,
-.home-page h3 {
+
+@media (max-width: 850px) {
+
+    /* ---------- CABEÇALHO ---------- */
+
+    .home-page .site-header-content,
+    .inner-page .site-header-content {
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+    }
+
+    /* ---------- HOME ---------- */
+
+    .home-page .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 50px 30px;
+    }
+
+    .home-page .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .home-page .hero .eyebrow,
+    .home-page .hero-text,
+    .home-page .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-page .hero-buttons {
+        justify-content: center;
+    }
+
+    .home-page .hero-image {
+        order: -1;
+        justify-content: center;
+        height: 390px;
+    }
+
+    .home-page .hero-image img {
+        width: min(100%, 320px);
+        height: 390px;
+        object-fit: cover;
+        object-position: center center;
+        transform: none;
+    }
+
+    .home-page .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- SOBRE MIM ---------- */
+
+    .about-main {
+        padding: 45px 30px 60px;
+    }
+
+    .about-hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image {
+        order: -1;
+        justify-content: center;
+        transform: none;
+    }
+
+    .about-image img {
+        width: min(100%, 300px);
+        height: 380px;
+    }
+
+    .about-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .about-content h1 {
+        font-size: 3rem;
+    }
+
+    .about-content .eyebrow,
+    .about-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-approach .section-heading {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    /* ---------- SERVIÇOS ---------- */
+
+    .inner-page .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- CONTATO ---------- */
+
+    .inner-page .contact-main {
+        padding: 35px 30px 45px;
+    }
+
+    .inner-page .contact-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    /* ---------- CABEÇALHO ---------- */
+
+    .home-page .site-header-content,
+    .inner-page .site-header-content {
+        padding: 16px 20px;
+    }
+
+    .site-logo {
+        height: 85px;
+    }
+
+    .home-page .site-nav,
+    .inner-page .site-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .home-page .site-nav a,
+    .inner-page .site-nav a {
+        padding: 8px 10px;
+        font-size: 0.88rem;
+    }
+
+    /* ---------- HOME ---------- */
+
+    .home-page .hero {
+        padding: 40px 20px 50px;
+    }
+
+    .home-page .hero h1 {
+        font-size: 3rem;
+    }
+
+    .home-page .hero-text {
+        font-size: 1.2rem;
+    }
+
+    .home-page .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .home-page .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-page .hero-image {
+        height: 350px;
+    }
+
+    .home-page .hero-image img {
+        width: 280px;
+        height: 350px;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .home-page .services-preview {
+        padding: 55px 20px 65px;
+    }
+
+    .home-page .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .home-page .service-card {
+        padding: 26px;
+    }
+
+    /* ---------- PÁGINAS INTERNAS ---------- */
+
+    .inner-page .inner-main {
+        padding: 30px 20px 40px;
+    }
+
+    .about-main {
+        padding: 40px 20px 55px;
+    }
+
+    .about-image img {
+        width: 280px;
+        height: 350px;
+    }
+
+    .about-content h1 {
+        font-size: 2.6rem;
+    }
+
+    .about-content p:not(.eyebrow):not(.about-role) {
+        font-size: 0.95rem;
+    }
+
+    .about-approach {
+        margin-top: 50px;
+        padding-top: 45px;
+    }
+
+    .about-approach h2 {
+        font-size: 2rem;
+    }
+
+    .inner-page .page-heading h1 {
+        font-size: 3rem;
+    }
+
+    .inner-page .service-detail-card {
+        padding: 24px;
+    }
+
+    .inner-page .service-detail-content h2 {
+        font-size: 1.55rem;
+    }
+
+    .inner-page .contact-main {
+        padding: 30px 20px 40px;
+    }
+
+    .inner-page .contact-heading h1 {
+        font-size: 2.6rem;
+    }
+
+    .inner-page .contact-card {
+        padding: 24px;
+    }
+}
+
+/* Cards da página Serviços */
+
+.inner-page .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.inner-page .services-grid .service-card {
+    display: block;
+    padding: 32px;
+    background-color: #ffffff;
+    border: 1px solid #e0e8ea;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(48, 79, 88, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.inner-page .services-grid .service-card:hover {
+    transform: translateY(-3px);
+    border-color: #c2d2d6;
+    background-color: #eef4f5;
+    box-shadow: 0 14px 30px rgba(48, 79, 88, 0.09);
+}
+
+.inner-page .services-grid .service-card h3 {
+    margin: 0 0 12px;
+    color: #365963;
     font-family: "Cormorant Garamond", serif;
+    font-size: 1.45rem;
+    font-weight: 400;
 }
 
-/* =========================================================
-   TIPOGRAFIA GLOBAL DO SITE
-   ========================================================= */
+.inner-page .services-grid .service-card p {
+    margin: 0 0 20px;
+    color: #718287;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
 
-body {
+.inner-page .services-grid .service-card span {
+    color: #547985;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* PSICOTERAPIA — TEXTO ACIMA E FOTO HORIZONTAL ABAIXO */
+
+.psychotherapy-main {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 45px 30px 60px;
+    background: transparent;
+}
+
+.psychotherapy-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    transform: none;
+}
+
+.psychotherapy-copy {
+    width: 100%;
+    max-width: 900px;
+}
+
+.psychotherapy-image {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.psychotherapy-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 2px;
+    box-shadow: 0 18px 45px rgba(48, 79, 88, 0.12);
+}
+
+@media (max-width: 600px) {
+    .psychotherapy-main {
+        padding: 30px 20px 40px;
+    }
+
+    .psychotherapy-copy h1 {
+        font-size: 2.7rem;
+    }
+
+    .psychotherapy-copy p:not(.psychotherapy-eyebrow) {
+        font-size: 1rem;
+    }
+
+    .psychotherapy-main .psychotherapy-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .psychotherapy-main .psychotherapy-actions .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* PSICOTERAPIA — AJUSTE DE TEXTO E IMAGEM */
+
+.psychotherapy-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    transform: none;
+}
+
+.psychotherapy-copy {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+}
+
+.psychotherapy-copy p:not(.psychotherapy-eyebrow) {
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.psychotherapy-image {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.psychotherapy-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 2px;
+    box-shadow: 0 18px 45px rgba(48, 79, 88, 0.12);
+}
+
+@media (max-width: 600px) {
+    .psychotherapy-layout {
+        gap: 20px;
+    }
+
+    .psychotherapy-copy p:not(.psychotherapy-eyebrow) {
+        text-align: justify;
+    }
+
+    .psychotherapy-image {
+        width: 100%;
+    }
+}
+
+
+/* ========================================
+   CONTATO — NOVO LAYOUT
+======================================== */
+
+.contact-page {
+    background: #f5f8f8;
+}
+
+.contact-main {
+    width: 100%;
+    max-width: 1190px;
+    min-height: 610px;
+    margin: 0 auto;
+    padding: 65px 30px 75px;
+}
+
+.contact-intro {
+    max-width: 720px;
+    margin-bottom: 38px;
+}
+
+.contact-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #78949a;
     font-family: "Lato", sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
-h1,
-h2,
-h3 {
+.contact-intro h1 {
+    margin: 0 0 12px;
+    color: #31545d;
     font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.8rem, 5vw, 3.7rem);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.contact-intro>p {
+    max-width: 650px;
+    margin: 0;
+    color: #70848a;
+    font-family: "Lato", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.contact-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 38px 40px;
+    border: 1px solid #dce6e8;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 12px 30px rgba(48, 79, 88, 0.04);
+}
+
+.contact-decoration {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.contact-decoration span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    border-radius: 3px;
+    background: #91afb4;
+}
+
+.contact-decoration span:nth-child(2) {
+    width: 13px;
+    background: #c0d2d5;
+}
+
+.contact-decoration span:nth-child(3) {
+    width: 7px;
+    background: #dce6e8;
+}
+
+.contact-welcome h2 {
+    max-width: 390px;
+    margin: 0 0 14px;
+    color: #31545d;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.35rem;
+    font-weight: 500;
+    line-height: 1.12;
+}
+
+.contact-welcome>p {
+    max-width: 420px;
+    margin: 0 0 28px;
+    color: #70848a;
+    font-family: "Lato", sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+.contact-whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 13px 18px;
+    border: 1px solid #31545d;
+    border-radius: 6px;
+    background: #31545d;
+    color: #ffffff;
+    font-family: "Lato", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-whatsapp-button:hover {
+    transform: translateY(-2px);
+    background: #25434b;
+}
+
+.contact-whatsapp-button img {
+    width: 21px;
+    height: 21px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.contact-whatsapp-button span {
+    margin-left: 4px;
+    font-size: 1.1rem;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 145px;
+    padding: 25px 28px;
+    border: 1px solid #dce6e8;
+    border-radius: 12px;
+    background: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(48, 79, 88, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 32px rgba(48, 79, 88, 0.09);
+}
+
+.contact-option-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #f1f6f6;
+}
+
+.contact-option-icon img {
+    display: block;
+    width: 27px;
+    height: 27px;
+    object-fit: contain;
+}
+
+.contact-option-info {
+    min-width: 0;
+}
+
+.contact-option-info h3 {
+    margin: 0 0 6px;
+    color: #31545d;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+}
+
+.contact-option-info p {
+    margin: 0 0 10px;
+    overflow-wrap: anywhere;
+    color: #70848a;
+    font-family: "Lato", sans-serif;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.contact-option-info>span {
+    color: #527985;
+    font-family: "Lato", sans-serif;
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+@media (max-width: 760px) {
+    .contact-main {
+        min-height: auto;
+        padding: 42px 20px 50px;
+    }
+
+    .contact-intro {
+        margin-bottom: 28px;
+    }
+
+    .contact-intro h1 {
+        font-size: 2.8rem;
+    }
+
+    .contact-intro>p {
+        font-size: 0.98rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .contact-welcome {
+        padding: 30px 25px;
+    }
+
+    .contact-welcome h2 {
+        font-size: 2.1rem;
+    }
+
+    .contact-options {
+        gap: 12px;
+    }
+
+    .contact-option {
+        min-height: 125px;
+        gap: 15px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    .contact-main {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .contact-welcome {
+        padding: 25px 20px;
+    }
+
+    .contact-whatsapp-button {
+        width: 100%;
+        padding: 12px 10px;
+        font-size: 0.82rem;
+    }
+
+    .contact-option {
+        padding: 17px 15px;
+    }
+        }
+
+                /* AJUSTE FINAL — ALINHAMENTO DA PÁGINA DE CONTATO */
+        
+                .contact-content {
+                    display: grid;
+                    grid-template-columns: 1fr 0.92fr;
+                    gap: 28px;
+                    align-items: stretch;
+                }
+        
+                .contact-welcome {
+                    min-width: 0;
+                    padding: 38px;
+                }
+        
+                .contact-welcome h2 {
+                    max-width: none;
+                    font-size: clamp(1.8rem, 2.2vw, 2.15rem);
+                    white-space: nowrap;
+                    letter-spacing: -0.5px;
+                }
+        
+                .contact-options {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 16px;
+                    height: 100%;
+                }
+        
+                .contact-option {
+                    flex: 1;
+                    min-height: 0;
+                }
+        
+                /* Telas menores */
+                @media (max-width: 900px) {
+                    .contact-welcome h2 {
+                        white-space: normal;
+                    }
+                }
+        
+                @media (max-width: 760px) {
+                    .contact-content {
+                        grid-template-columns: 1fr;
+                        gap: 18px;
+                    }
+        
+                    .contact-welcome {
+                        padding: 30px 25px;
+                    }
+        
+                    .contact-welcome h2 {
+                        font-size: 2.1rem;
+                        white-space: normal;
+                    }
+        
+                    .contact-options {
+                        gap: 12px;
+                    }
+        
+                    .contact-option {
+                        min-height: 125px;
+                    }
+                }
+        
+
+                                /* TEXTO INTRODUTÓRIO OCUPANDO TODA A LARGURA */
+                
+                                .contact-intro {
+                                    max-width: 100%;
+                                    width: 100%;
+                                }
+                
+                                .contact-intro>p {
+                                    max-width: 100%;
+                                    width: 100%;
+                                }
+
+                                                                /* CORREÇÃO DO ÍCONE DO WHATSAPP */
+                                
+                                                                .contact-whatsapp-button img {
+                                                                    display: block;
+                                                                    width: 21px;
+                                                                    height: 21px;
+                                                                    object-fit: contain;
+                                                                    filter: none;
+                                                                }
+
+                                                                
+/* CONTATO — AJUSTE PARA CABER NA TELA */
+
+@media (min-width: 761px) and (min-height: 700px) {
+    .contact-main {
+        min-height: 0;
+        padding-top: 38px;
+        padding-bottom: 35px;
+    }
+
+    .contact-intro {
+        margin-bottom: 26px;
+    }
+
+    .contact-intro h1 {
+        margin-bottom: 8px;
+        font-size: 3.3rem;
+    }
+
+    .contact-intro > p {
+        line-height: 1.5;
+    }
+
+    .contact-content {
+        gap: 24px;
+    }
+
+    .contact-welcome {
+        padding: 28px 34px;
+    }
+
+    .contact-decoration {
+        margin-bottom: 16px;
+    }
+
+    .contact-welcome h2 {
+        margin-bottom: 10px;
+    }
+
+    .contact-welcome > p {
+        margin-bottom: 20px;
+        line-height: 1.65;
+    }
+
+    .contact-option {
+        min-height: 125px;
+        padding: 20px 25px;
+    }
+
+    .contact-option-info h3 {
+        margin-bottom: 4px;
+    }
+
+    .contact-option-info p {
+        margin-bottom: 6px;
+    }
+}
+
+/* AJUSTE DO ÍCONE DO WHATSAPP */
+
+.contact-whatsapp-button {
+    min-height: 50px;
+    padding: 13px 18px;
+    gap: 10px;
+}
+
+.contact-whatsapp-button img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: none;
+    flex-shrink: 0;
+    margin: 0;
+    transform: scale(1.25);
+
+
+/* SOBRE MIM — AJUSTE PARA UMA ÚNICA TELA */
+
+.about-main {
+    flex: 1;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 25px 30px 30px;
+}
+
+.about-hero {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 35px;
+    min-height: 0;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+}
+
+.about-content {
+    max-width: 100%;
+}
+
+.about-content p:not(.eyebrow):not(.about-role) {
+    margin-bottom: 10px;
+    font-size: 0.96rem;
+    line-height: 1.55;
+    text-align: justify;
+}
+
+@media (min-width: 851px) and (min-height: 650px) {
+    .about-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .about-main {
+        padding: 35px 25px 45px;
+    }
+
+    .about-hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .about-image {
+        justify-content: center;
+    }
+
+    .about-image img {
+        width: min(100%, 300px);
+        height: auto;
+        max-height: 350px;
+    }
+}
 }
