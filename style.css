@@ -2421,3 +2421,40 @@ img {
     padding: 9px 4px;
   }
 }
+
+
+/* Ajustes mobile: cards de Serviços lado a lado e rodapé legível */
+@media (max-width: 760px) {
+  .inner-page .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .inner-page .services-grid .service-card {
+    min-width: 0;
+    padding: 20px 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .inner-page .services-grid .service-card h3 {
+    font-size: clamp(1.05rem, 4.2vw, 1.35rem);
+    line-height: 1.2;
+  }
+
+  .inner-page .services-grid .service-card p {
+    font-size: clamp(0.82rem, 3.2vw, 0.92rem);
+    line-height: 1.55;
+  }
+
+  .inner-page .services-grid .service-card span {
+    font-size: 0.86rem;
+  }
+
+  .home-page .site-footer p,
+  .inner-page .site-footer p {
+    font-size: clamp(0.55rem, 2.8vw, 0.72rem);
+  }
+}
