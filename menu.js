@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-    window.addEventListener("resize", () => { if (window.innerWidth > 760) closeMenu(); });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) closeMenu();
+    });
   });
 });
