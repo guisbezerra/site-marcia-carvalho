@@ -2388,3 +2388,36 @@ img {
 .site-header-content{position:relative}.header-name{z-index:1;pointer-events:none}.menu-toggle{display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;width:44px;height:44px;padding:10px;border:1px solid #dce5e7;border-radius:8px;background:#fff;color:#365963;cursor:pointer}.menu-toggle span{display:block;width:21px;height:2px;border-radius:2px;background:currentColor;transition:transform 180ms ease,opacity 180ms ease}.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(7px) rotate(45deg)}.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:760px){.home-page .site-header-content,.inner-page .site-header-content{display:grid;grid-template-columns:64px minmax(0,1fr) 44px;align-items:center;gap:10px;min-height:0;padding:12px 16px}.home-page .brand,.inner-page .brand{grid-column:1;grid-row:1;width:64px;min-width:0}.site-logo{width:64px;height:64px;object-fit:contain}.home-page .header-name,.inner-page .header-name{position:static;grid-column:2;grid-row:1;min-width:0;margin:0;transform:none;align-items:flex-start;white-space:normal;font-size:clamp(1.35rem,5vw,1.8rem);line-height:1.05;text-align:left}.header-name small{margin-top:5px;font-size:clamp(.55rem,2.1vw,.68rem);line-height:1.35;letter-spacing:.035em}.menu-toggle{display:flex;grid-column:3;grid-row:1;justify-self:end}.home-page .site-nav,.inner-page .site-nav{display:none;grid-column:1/-1;grid-row:2;width:100%;align-items:stretch;flex-direction:column;gap:4px;padding-top:8px;border-top:1px solid #e5ecee}.home-page .site-header-content.menu-open .site-nav,.inner-page .site-header-content.menu-open .site-nav{display:flex}.home-page .site-nav a,.inner-page .site-nav a{display:block;width:100%;padding:12px 14px;font-size:1rem}}
 @media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
+
+
+/* Ajustes finais do cabeçalho e rodapé no celular */
+@media (max-width: 760px) {
+  .home-page .header-name,
+  .inner-page .header-name {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-page .header-name span,
+  .inner-page .header-name span {
+    white-space: nowrap;
+    font-size: clamp(1.2rem, 4.5vw, 1.65rem);
+  }
+
+  .home-page .header-name small,
+  .inner-page .header-name small {
+    text-align: center;
+  }
+
+  .home-page .site-footer p,
+  .inner-page .site-footer p {
+    white-space: nowrap;
+    font-size: clamp(0.48rem, 2.1vw, 0.68rem);
+    line-height: 1.4;
+  }
+
+  .home-page .site-footer,
+  .inner-page .site-footer {
+    padding: 9px 4px;
+  }
+}
