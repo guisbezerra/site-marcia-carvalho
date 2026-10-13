@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
 
     <title>Contato | Márcia Carvalho</title>
 
@@ -22,20 +23,17 @@
   <body class="inner-page contact-page">
     <header class="site-header">
       <div class="site-header-content">
-        <a href="index.html" class="brand">
-          <img
-            src="imagem5.png"
-            alt="Márcia Carvalho - Psicóloga e Neuropsicóloga"
-            class="site-logo"
-          />
+        <a href="index.html" class="brand" aria-label="Página inicial de Márcia Carvalho">
+          <img src="imagem5.png" alt="Márcia Carvalho - Psicóloga e Neuropsicóloga" class="site-logo" />
         </a>
-
         <div class="header-name">
           <span>Márcia Carvalho</span>
           <small>PSICÓLOGA - CRP 01/20507</small>
         </div>
-
-        <nav class="site-nav">
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" id="site-nav">
           <a href="index.html">Início</a>
           <a href="sobre-mim.html">Sobre mim</a>
           <a href="servicos.html">Serviços</a>
@@ -125,5 +123,6 @@
       <p>© 2026 Márcia Carvalho · Psicóloga e Neuropsicóloga · CRP 01/20507</p>
     </footer>
     <script src="animations.js"></script>
+      <script src="menu.js"></script>
   </body>
 </html>
