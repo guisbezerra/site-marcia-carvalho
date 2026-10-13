@@ -221,7 +221,7 @@ img {
 
 .home-page .hero-description {
     max-width: 600px;
-    margin: 0 0 5px;
+    margin: 0 0 10px;
     color: #708287;
     font-size: 1.05rem;
     line-height: 1.7;
@@ -595,7 +595,7 @@ img {
 }
 
 .about-content p:not(.eyebrow):not(.about-role) {
-    margin: 0 0 12px;
+    margin: 0 0 7px;
 
     color: #687b80;
 
@@ -2338,4 +2338,48 @@ img {
         max-height: 350px;
     }
 }
+}
+
+/* Animações dos botões nas páginas de serviços */
+
+.psychotherapy-actions .button {
+    transition:
+        transform 250ms ease,
+        box-shadow 250ms ease,
+        background-color 250ms ease,
+        border-color 250ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .psychotherapy-actions .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(48, 79, 88, 0.12);
+    }
+}
+
+/* Movimento suave da imagem nas páginas de serviços */
+
+.psychotherapy-image img {
+    transition: transform 500ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .psychotherapy-image img:hover {
+        transform: scale(1.015);
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .psychotherapy-actions .button,
+    .psychotherapy-image img {
+        transition: none;
+    }
+
+    .psychotherapy-actions .button:hover,
+    .psychotherapy-image img:hover {
+        transform: none;
+    }
 }
