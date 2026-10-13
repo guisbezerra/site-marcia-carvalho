@@ -2458,3 +2458,51 @@ img {
     font-size: clamp(0.55rem, 2.8vw, 0.72rem);
   }
 }
+
+
+/* Padronização tipográfica entre páginas + cartões de Serviços lado a lado */
+@media (max-width: 760px) {
+  .inner-page .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .inner-page .services-grid .service-card {
+    min-width: 0;
+    padding: 20px 14px;
+  }
+
+  .inner-page .services-grid .service-card h3 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .inner-page .services-grid .service-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .inner-page .services-grid .service-card span {
+    font-size: 0.9rem;
+  }
+
+  /* Texto comum com tamanho uniforme em todas as páginas */
+  .home-page p,
+  .inner-page p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Exceção: descrições dos cartões ficam um pouco menores */
+  .home-page .service-card p,
+  .inner-page .services-grid .service-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .inner-page .page-heading h1,
+  .contact-intro h1 {
+    font-size: 3rem;
+    line-height: 1.08;
+  }
+}
