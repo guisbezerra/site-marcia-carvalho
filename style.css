@@ -2506,3 +2506,16 @@ img {
     line-height: 1.08;
   }
 }
+
+/* Página Serviços: cartões empilhados no celular, como na página inicial */
+@media (max-width: 760px) {
+  .inner-page .services-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .inner-page .services-grid .service-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
