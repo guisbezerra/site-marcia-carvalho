@@ -2519,3 +2519,11 @@ img {
     box-sizing: border-box;
   }
 }
+
+/* Padroniza o texto dos cartões de Serviços com as demais páginas no celular */
+@media (max-width: 760px) {
+  .inner-page .services-grid .service-card p {
+    font-size: 0.96rem !important;
+    line-height: 1.55 !important;
+  }
+}
